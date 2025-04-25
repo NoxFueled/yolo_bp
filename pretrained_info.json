@@ -1,0 +1,77 @@
+{
+    "yolov5n.pt": {
+        "layers": 262,
+        "parameters": 2654816,
+        "GFLOPs": 7.8
+    },
+    "yolov5s.pt": {
+        "layers": 262,
+        "parameters": 9153152,
+        "GFLOPs": 24.2
+    },
+    "yolov5m.pt": {
+        "layers": 339,
+        "parameters": 25111456,
+        "GFLOPs": 64.6
+    },
+    "yolov5l.pt": {
+        "layers": 416,
+        "parameters": 53225024,
+        "GFLOPs": 135.6
+    },
+    "yolov5x.pt": {
+        "layers": 493,
+        "parameters": 97276448,
+        "GFLOPs": 247.3
+    },
+    "yolov8n.pt": {
+        "layers": 225,
+        "parameters": 3157200,
+        "GFLOPs": 8.9
+    },
+    "yolov8s.pt": {
+        "layers": 225,
+        "parameters": 11166560,
+        "GFLOPs": 28.8
+    },
+    "yolov8m.pt": {
+        "layers": 295,
+        "parameters": 25902640,
+        "GFLOPs": 79.3
+    },
+    "yolov8l.pt": {
+        "layers": 365,
+        "parameters": 43691520,
+        "GFLOPs": 165.7
+    },
+    "yolov8x.pt": {
+        "layers": 365,
+        "parameters": 68229648,
+        "GFLOPs": 258.5
+    },
+    "yolo11n.pt": {
+        "layers": 319,
+        "parameters": 2624080,
+        "GFLOPs": 6.6
+    },
+    "yolo11s.pt": {
+        "layers": 319,
+        "parameters": 9458752,
+        "GFLOPs": 21.7
+    },
+    "yolo11m.pt": {
+        "layers": 409,
+        "parameters": 20114688,
+        "GFLOPs": 68.5
+    },
+    "yolo11l.pt": {
+        "layers": 631,
+        "parameters": 25372160,
+        "GFLOPs": 87.6
+    },
+    "yolo11x.pt": {
+        "layers": 631,
+        "parameters": 56966176,
+        "GFLOPs": 196.0
+    }
+}

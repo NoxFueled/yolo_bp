@@ -53,8 +53,7 @@ with tab1:
     with col3:
             st.metric("GFLOPs", current_stats["GFLOPs"], delta=None)
     
-    with st.form(key="YOLO_options"):
-        submit_button = st.form_submit_button("Spustiť")
+    submit_button = st.button("Spustiť")
     
     
     if submit_button and uploaded_file is not None:

@@ -47,24 +47,18 @@ with tab1:
     current_stats = pretrained_info.get(model_file, {})
     col1, col2, col3 = st.columns(3)
     with col1:
-            st.metric("Layers", current_stats["layers"], delta=None)
+            st.metric("Vrstvy", current_stats["layers"], delta=None)
     with col2:
-            st.metric("Parameters", current_stats["parameters"], delta=None)
+            st.metric("Parametre", current_stats["parameters"], delta=None)
     with col3:
-            st.metric("GFLOPs", current_stats["GFLOPs"], delta=None)
+            st.metric("GFLOPS", current_stats["GFLOPs"], delta=None)
     
     submit_button = st.button("Spustiť")
-    
-    
     if submit_button and uploaded_file is not None:
         # Ulozi uploadnute video ako temp. file
         input_video_path = f"uploaded_{uploaded_file.name}"
         with open(input_video_path, "wb") as f:
             f.write(uploaded_file.read())
-        
-        
-        
-
         # Inferencie cez subproces
         command = ["python", "run_inference.py", model_file, input_video_path, output_video_path]
         subprocess.run(command)
@@ -74,8 +68,6 @@ with tab1:
             with open(output_video_path, "rb") as video_file:
                 video_bytes = video_file.read()
             st.video(video_bytes)
-
-        
         os.remove(input_video_path)
 
 with tab2:
@@ -159,7 +151,7 @@ with tab2:
                 st.altair_chart(charts[3], use_container_width=True)
 
     else:
-        st.write("No models found for the selected version.")
+        st.write("Neboli nájdené žiadne metriky pre vybranú verziu modelu.")
 with tab3:
     st.markdown("Táto sekcia zobrazuje metriky trénovaného modelu YOLO11n na troch rôznych datasetoch: VisDrone, COCO a PASCAL VOC.")
     st.markdown("Modely boli natrénované na 10 epochách")
@@ -206,13 +198,14 @@ with tab3:
         else:
             st.write(f"No results found for the {traindataset} dataset.")
     
-    with st.expander("Zobraziť podrobné grafy a štatistiky"):
+    with st.expander("Zobraziť dodatočné grafy a krivky"):
         stat1,stat2,stat3 = st.columns(3)
         if traindataset == "VisDrone":
             with stat1:
                 st.image("runs/train/visdrone_11n/confusion_matrix_normalized.png", caption="Confusion matrix (normalized)")
             with stat2:
-                st.image("runs/train/visdrone_11n/PR_curve.png", caption="Precision-Recall Curve")
+                st.image("runs/train/visdrone_11n/PR_curve.png"\
+                         , caption="Precision-Recall Curve")
             with stat3:
                 st.image("runs/train/visdrone_11n/F1_curve.png", caption="F1-Score Curve")
             
